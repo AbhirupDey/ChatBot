@@ -1,0 +1,313 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "hello": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hey": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "good,morn": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "afternoon,good": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "even,good": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "yo": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "up,what": {
+            "intent": "greeting",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greeting": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good morning",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good afternoon",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good evening",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "yo",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "whats up",
+            "intent": "greeting"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "hello": 1,
+              "hey": 1,
+              "hi": 1,
+              "good": 1,
+              "morn": 1,
+              "afternoon": 1,
+              "even": 1,
+              "yo": 1,
+              "what": 1,
+              "up": 1
+            },
+            "intents": {
+              "greeting": 1
+            },
+            "intentFeatures": {
+              "greeting": {
+                "hello": 1,
+                "hey": 1,
+                "hi": 1,
+                "good": 1,
+                "morn": 1,
+                "afternoon": 1,
+                "even": 1,
+                "yo": 1,
+                "what": 1,
+                "up": 1
+              }
+            },
+            "featuresToIntent": {
+              "hello": [
+                "greeting"
+              ],
+              "hey": [
+                "greeting"
+              ],
+              "hi": [
+                "greeting"
+              ],
+              "good": [
+                "greeting"
+              ],
+              "morn": [
+                "greeting"
+              ],
+              "afternoon": [
+                "greeting"
+              ],
+              "even": [
+                "greeting"
+              ],
+              "yo": [
+                "greeting"
+              ],
+              "what": [
+                "greeting"
+              ],
+              "up": [
+                "greeting"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "hello",
+                "hey",
+                "hi",
+                "good",
+                "morn",
+                "afternoon",
+                "even",
+                "yo",
+                "what",
+                "up"
+              ],
+              "intents": [
+                "greeting"
+              ],
+              "perceptrons": [
+                [
+                  3.813215970993042,
+                  3.952758312225342,
+                  3.9148778915405273,
+                  2.9981462955474854,
+                  1.0074524879455566,
+                  1.002756118774414,
+                  0.9962937235832214,
+                  3.869480609893799,
+                  2.0378243923187256,
+                  2.0378243923187256,
+                  10.306986678823794
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hey"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "good morning"
+      ],
+      [
+        "en",
+        "good afternoon"
+      ],
+      [
+        "en",
+        "good evening"
+      ],
+      [
+        "en",
+        "yo"
+      ],
+      [
+        "en",
+        "whats up"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "greeting": [
+          {
+            "answer": "Hi!"
+          },
+          {
+            "answer": "Hey!"
+          },
+          {
+            "answer": "Yes!"
+          },
+          {
+            "answer": "Yo Whats up!"
+          },
+          {
+            "answer": "Yes, How can i help you?"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
