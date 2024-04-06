@@ -22,7 +22,7 @@ manager.train().then(async () => {
     manager.save();
     app.get('/bot', async (req, res) => {
         let response = await manager.process('en', req.query.message);
-        res.send(response.answer);
+        res.send(response.answer || 'Sorry I dont know');
     })
     app.listen(5000);
 })
